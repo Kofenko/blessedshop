@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blessed | Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Плавающий фон теперь охватывает весь сайт целиком -->
+    <div id="floating-background" class="floating-bg"></div>
+
+    <header class="glass-header">
+        <div class="logo">blessed<span>.</span></div>
+        <nav>
+            <button data-target="home">Главная</button>
+            <button data-target="catalog">Каталог</button>
+            <button data-target="info">Инфо</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Главная -->
+        <section id="home" class="page-section">
+            <div class="hero glass-panel">
+                <h1>Безупречный стиль. <br><span class="neon-text">Низкие цены.</span></h1>
+                <p>Эксклюзивные вещи без переплат.</p>
+                <button class="btn-primary" onclick="document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' })">Перейти в каталог</button>
+            </div>
+        </section>
+
+        <!-- Каталог -->
+        <section id="catalog" class="page-section">
+            <div class="catalog-header glass-panel">
+                <input type="text" id="searchInput" placeholder="Поиск товаров...">
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <!-- Карточки рендерятся через JS -->
+            </div>
+            <div class="suggest-product">
+                <button class="btn-secondary" onclick="openModal('Предложить товар')">Не нашли нужный? Предложить товар</button>
+            </div>
+        </section>
+
+        <!-- Инфо -->
+        <section id="info" class="page-section">
+            <div class="info-content glass-panel">
+                <h2>FAQ и Контакты</h2>
+                <div class="faq-item">
+                    <h3>Какова минимальная стоимость доставки?</h3>
+                    <p>Мы не скрываем цены — доставка обычно начинается от 20 евро.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Как оформить заказ?</h3>
+                    <p>Нажмите "Купить" в каталоге, и мы свяжемся с вами в Telegram для уточнения деталей.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Какие существуют способы оплаты?</h3>
+                    <p>Мы принимаем оплату напрямую через перевод на карту либо через оплату на DonationAlerts.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Почему низкие цены?</h3>
+                    <p>Потому что заказываем напрямую с китайских маркетплейсов.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Какое качество стоит ожидать?</h3>
+                    <p>Мы всегда выбираем лучшие варианты на рынке.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Какие есть цвета и размеры?</h3>
+                    <p>Мы говорим все варианты во время оформления заказа.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Сколько длиться доставка?</h3>
+                    <p>Около 3 дней до китайского склада и 7-15 дней до вашего адреса.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Как связаться с менеджером?</h3>
+                    <p>Через Telegram: <a href="https://t.me/blessedbyww" target="_blank">@blessedbyww</a></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Модальное окно (Glassmorphism) -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal-content glass-panel">
+            <button class="close-btn" onclick="closeModal()">×</button>
+            <h2 id="modalTitle">Для заказа свяжитесь с нами</h2>
+            <p>Менеджер ответит вам в ближайшее время для оформления покупки.</p>
+            <a href="https://t.me/blessedbyww" target="_blank" class="btn-telegram">Написать в Telegram</a>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

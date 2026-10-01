@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
+
+:root {
+    --bg-color: #050507;
+    --neon-purple: #9d00ff;
+    --neon-glow: 0 0 10px rgba(157, 0, 255, 0.6), 0 0 20px rgba(157, 0, 255, 0.4);
+    --glass-bg: rgba(20, 20, 25, 0.3);
+    --glass-border: rgba(255, 255, 255, 0.05);
+    --text-main: #ffffff;
+    --text-muted: #888888;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    /* Плавный скролл для всего документа */
+    scroll-behavior: smooth; 
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-image: 
+        radial-gradient(circle at 15% 50%, rgba(157, 0, 255, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 85% 20%, rgba(157, 0, 255, 0.08) 0%, transparent 40%);
+    background-attachment: fixed;
+}
+
+/* Глобальный плавающий фон для всего сайта */
+.floating-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Позади всего контента */
+    pointer-events: none;
+    overflow: hidden; /* Теперь обрезает только по краям экрана */
+}
+
+.floating-img {
+    position: absolute;
+    bottom: -200px;
+    border-radius: 16px;
+    object-fit: cover;
+    opacity: 0.25;
+    filter: brightness(0.3) contrast(1.2);
+    animation: floatUp linear infinite;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-120vh) rotate(15deg);
+    }
+}
+
+/* Glassmorphism Основа */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+.neon-text {
+    color: var(--neon-purple);
+    text-shadow: var(--neon-glow);
+}
+
+/* Навигация */
+.glass-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 2rem;
+    z-index: 100;
+    background: rgba(5, 5, 7, 0.5);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.logo span {
+    color: var(--neon-purple);
+}
+
+nav button {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-left: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s, text-shadow 0.3s;
+    font-weight: 500;
+}
+
+nav button:hover, nav button.active-nav {
+    color: var(--text-main);
+    text-shadow: 0 0 8px rgba(255,255,255,0.3);
+}
+
+/* SPA Контейнер - теперь секции идут друг за другом */
+main {
+    padding: 0 20px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 100px; /* Расстояние между блоками */
+}
+
+/* Отступ сверху для каждой секции, чтобы фиксированное меню не перекрывало заголовки */
+.page-section {
+    scroll-margin-top: 100px; 
+}
+
+/* Главная страница */
+#home {
+    min-height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px; 
+}
+
+.hero {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 6rem 4rem; 
+    width: 100%;
+    max-width: 900px;
+    background: rgba(20, 20, 25, 0.45);
+    backdrop-filter: blur(24px); 
+    -webkit-backdrop-filter: blur(24px);
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+}
+
+/* Кнопки */
+.btn-primary, .btn-secondary, .btn-telegram {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: var(--neon-purple);
+    color: white;
+    border: none;
+    box-shadow: 0 0 15px rgba(157, 0, 255, 0.3);
+}
+
+.btn-primary:hover {
+    box-shadow: var(--neon-glow);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-main);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:hover {
+    border-color: var(--neon-purple);
+    background: rgba(157, 0, 255, 0.05);
+}
+
+.btn-telegram {
+    background: #2AABEE;
+    color: white;
+    border: none;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+/* Каталог */
+.catalog-header {
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+#searchInput {
+    width: 100%;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--glass-border);
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
+    color: var(--text-main);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#searchInput:focus {
+    border-color: var(--neon-purple);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.product-card {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(157, 0, 255, 0.5);
+    box-shadow: 0 10px 30px rgba(157, 0, 255, 0.1);
+}
+
+.product-image {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #111; 
+}
+
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.product-price {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--text-main);
+}
+
+.suggest-product {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+/* Инфо */
+.info-content {
+    padding: 3rem;
+}
+
+.info-content h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.faq-item {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.faq-item h3 {
+    margin-bottom: 0.8rem;
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+.faq-item p {
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* Модальное окно */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal-content {
+    padding: 3rem 2.5rem;
+    width: 90%;
+    max-width: 420px;
+    position: relative;
+    transform: translateY(30px) scale(0.95);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: center;
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0) scale(1);
+}
+
+.modal-content h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.modal-content p {
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.3s;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    color: var(--text-main);
+}
+
+@media (max-width: 768px) {
+    nav button {
+        margin-left: 1rem;
+        font-size: 0.9rem;
+    }
+    .glass-header {
+        padding: 1rem;
+    }
+    .info-content, .hero {
+        padding: 1.5rem;
+    }
+}
