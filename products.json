@@ -70,5 +70,11 @@
         "name": "hikikomori kai sweatshirt",
         "price": 15,
         "image": "./images/hikikomori-kai.jpg"
+    },
+     {
+        "id": 13,
+        "name": "Balenciaga 3xl Chain",
+        "price": 120,
+        "image": "./images/balenciaga-3xl-chained.jpg"
     }
 ]
