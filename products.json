@@ -76,5 +76,11 @@
         "name": "Balenciaga 3xl Chain",
         "price": 120,
         "image": "./images/balenciaga-3xl-chained.jpg"
+    },
+    {
+        "id": 14,
+        "name": "Rick Owens DRKSHDW Vegan Ramones",
+        "price": 40,
+        "image": "./images/Rick-Owens-Ramones.jpg"
     }
 ]
