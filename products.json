@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "Balenciaga 3XL",
-        "price": 50,
+        "price": 45,
         "image": "./images/balenciaga-3xl.jpg"
     },
     {
@@ -13,8 +13,8 @@
     },
     {
         "id": 3,
-        "name": "Balenciaga Truck",
-        "price": 50,
+        "name": "Balenciaga Track",
+        "price": 40,
         "image": "./images/balenciaga-truck.jpg"
     },
     {
@@ -26,7 +26,7 @@
     {
         "id": 5,
         "name": "Nike Initiator",
-        "price": 50,
+        "price": 40,
         "image": "./images/nike-initiator.png"
     },
     {
@@ -38,13 +38,13 @@
     {
         "id": 7,
         "name": "Nike Air Jordan 4",
-        "price": 55,
+        "price": 40,
         "image": "./images/nike-air-jordan-4.jpg"
     },
     {
         "id": 8,
         "name": "Balenciaga Runner",
-        "price": 90,
+        "price": 70,
         "image": "./images/balenciaga-runner.jpg"
     },
     {
@@ -56,13 +56,13 @@
     {
         "id": 10,
         "name": "Balenciaga 10XL",
-        "price": 60,
+        "price": 70,
         "image": "./images/balenciaga-10xl.png"
     },
     {
         "id": 11,
         "name": "Nike Air Force 1",
-        "price": 40,
+        "price": 35,
         "image": "./images/air-force-1.png"
     },
     {
@@ -74,7 +74,7 @@
     {
         "id": 13,
         "name": "Balenciaga 3xl Chain",
-        "price": 120,
+        "price": 80,
         "image": "./images/balenciaga-3xl-chained.jpg"
     },
     {
@@ -82,5 +82,17 @@
         "name": "Rick Owens DRKSHDW Vegan Ramones",
         "price": 40,
         "image": "./images/Rick-Owens-Ramones.jpg"
+    },
+    {
+        "id": 15,
+        "name": "Balenciaga 16XL",
+        "price": 70,
+        "image": "./images/balenciaga-16xl.jpg"
+    },
+    {
+        "id": 16,
+        "name": "Balenciaga Cargo Sneakers",
+        "price": 70,
+        "image": "./images/balenciaga-cargo.jpg"
     }
 ]
