@@ -87,12 +87,12 @@
         "id": 15,
         "name": "Balenciaga 16XL",
         "price": 70,
-        "image": "./images/balenciaga-16xl.jpg"
+        "image": "./images/balenciaga-16xl.png"
     },
     {
         "id": 16,
         "name": "Balenciaga Cargo Sneakers",
         "price": 70,
-        "image": "./images/balenciaga-cargo.jpg"
+        "image": "./images/balenciaga-cargo.png"
     }
 ]
